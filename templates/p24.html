@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+	<p align="center"><a href=/><button class="button1">HOME </button></a></p>
+         <p>Date/Time: <span id="datetime"></span></p>
+
+	<script>
+	var dt = new Date();
+	document.getElementById("datetime").innerHTML = dt.toLocaleString();
+	</script>
+	<p> Here are all the messages in the last 24 hours</p>
+	  {% for word in message_24 %} 
+	  	<p>{{word}}</p>
+	  {% endfor %} 
+{% endblock %}
+
